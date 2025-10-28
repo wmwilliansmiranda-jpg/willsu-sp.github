@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -210,10 +211,7 @@
 
         /* HERO SECTION */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9) 0%, rgba(45, 55, 72, 0.9) 100%), url('https://i.ibb.co/MDw9S9gC.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, var(--primary), #2d3748);
             color: white;
             text-align: center;
             padding: 200px 0 120px;
@@ -237,7 +235,7 @@
 
         /* BANNER DE PREÇO */
         .price-banner {
-            background: linear-gradient(135deg, var(--primary), #2d3748);
+            background: linear-gradient(135deg, #ff6b35, #e55627);
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -251,20 +249,20 @@
         }
 
         .price-banner h2:after {
-            background: var(--secondary);
+            background: white;
         }
 
         .price-banner .price {
             font-size: 4rem;
             font-weight: 800;
             margin: 20px 0;
-            color: var(--secondary);
+            color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .price-banner .highlight {
-            background: var(--secondary);
-            color: var(--primary);
+            background: white;
+            color: #ff6b35;
             padding: 10px 25px;
             border-radius: 8px;
             font-weight: 700;
@@ -275,49 +273,18 @@
             letter-spacing: 1px;
         }
 
-        /* GALERIA DE TRABALHOS */
-        .gallery {
-            background: var(--light);
-            padding: 100px 0;
+        .price-text {
+            color: #ffd700;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 10px 0;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .gallery-item {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .gallery-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover:before {
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        .quality-text {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 10px 0;
         }
 
         /* SERVIÇOS */
@@ -335,10 +302,11 @@
         .service-card {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
+            padding: 40px 30px;
             box-shadow: var(--shadow);
             transition: all 0.4s ease;
             border: 1px solid #e2e8f0;
+            text-align: center;
         }
 
         .service-card:hover {
@@ -346,19 +314,10 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
-        .service-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover .service-img {
-            transform: scale(1.05);
-        }
-
-        .service-content {
-            padding: 30px;
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
         }
 
         .service-content h3 {
@@ -370,6 +329,24 @@
         .service-content p {
             color: #718096;
             line-height: 1.7;
+        }
+
+        /* GALERIA CHAMADA */
+        .gallery-call {
+            background: var(--light);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .gallery-call-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gallery-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
         }
 
         /* BENEFÍCIOS */
@@ -446,13 +423,31 @@
             letter-spacing: 1px;
         }
 
-        .about-img {
-            height: 500px;
-            background: url('https://i.ibb.co/NnWYhJsH.jpg');
-            background-size: cover;
-            background-position: center;
+        .about-features {
+            background: var(--light);
+            padding: 40px;
             border-radius: 15px;
             box-shadow: var(--shadow);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li:before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* CONTATO */
@@ -698,7 +693,6 @@
 
             .hero {
                 padding: 160px 0 80px;
-                background-attachment: scroll;
             }
 
             .price-banner h2 {
@@ -719,10 +713,6 @@
 
             .whatsapp-icon {
                 margin-right: 0;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
             }
 
             section {
@@ -772,9 +762,9 @@
                 <div class="menu-toggle">☰</div>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#trabalhos">Nossos Trabalhos</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#precos">Preços</a></li>
+                    <li><a href="#galeria">Ver Trabalhos</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -785,7 +775,7 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>WillSu - Excelência em Restauração</h1>
+            <h1>WillSu - Excelência em Restauração e Envelopamento</h1>
             <p>12 anos transformando eletrodomésticos e móveis com qualidade superior e acabamento impecável</p>
             <a href="https://wa.me/5511983357198?text=Olá! Gostaria de solicitar um orçamento para restauração/envelopamento." class="btn btn-whatsapp" target="_blank">Solicitar Orçamento</a>
         </div>
@@ -795,32 +785,10 @@
     <section class="price-banner" id="precos">
         <div class="container">
             <h2>ENVELOPAMENTO COM GARANTIA WILLSU</h2>
-            <div class="price">R$ 480,00</div>
-            <div class="highlight">PAGAMENTO APÓS APROVAÇÃO</div>
-            <p>GELADEIRA DUPLEX A PARTIR DE R$ 480,00 EM ADESIVO PREMIUM</p>
-            <p>QUALIDADE PROFISSIONAL - RESULTADO GARANTIDO</p>
-        </div>
-    </section>
-
-    <!-- GALERIA DE TRABALHOS -->
-    <section class="gallery" id="trabalhos">
-        <div class="container">
-            <h2>Nossos Trabalhos</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: #718096;">
-                Confira alguns dos nossos projetos realizados com excelência e atenção aos detalhes
-            </p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/MDw9S9gC.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/NnWYhJsH.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/R57DCp0.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/S49VrwJr.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/5x9bYt0T.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/Ngtd3vqG.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/Tx0ptJ6L.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/MkC1Yb1Q.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.ibb.co/fdVQvhtD.jpg')"></div>
-            </div>
+            <div class="price">R$ 500,00</div>
+            <div class="highlight">PAGAMENTO SOMENTE APÓS O SERVIÇO REALIZADO</div>
+            <p class="price-text">GELADEIRA DUPLEX A PARTIR DE R$ 500,00 EM ADESIVO PREMIUM</p>
+            <p class="quality-text">QUALIDADE PROFISSIONAL - RESULTADO GARANTIDO</p>
         </div>
     </section>
 
@@ -830,26 +798,45 @@
             <h2>Serviços Especializados</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://i.ibb.co/tTXBgR7L.jpg');"></div>
+                    <div class="service-icon">❄️</div>
                     <div class="service-content">
                         <h3>Envelopamento de Geladeiras</h3>
                         <p>Transformação completa com adesivos premium de alta durabilidade e resistência, disponível em diversas cores e texturas.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://i.ibb.co/S2zq3BN.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Restauração de Móveis</h3>
-                        <p>Recuperação profissional de móveis antigos ou danificados, devolvendo a beleza original com técnicas especializadas.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://i.ibb.co/8g1P2xTK.jpg');"></div>
+                    <div class="service-icon">🔥</div>
                     <div class="service-content">
                         <h3>Envelopamento de Fogões</h3>
                         <p>Proteção e renovação com adesivos resistentes ao calor, fáceis de limpar e com acabamento profissional.</p>
                     </div>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">🛋️</div>
+                    <div class="service-content">
+                        <h3>Restauração de Móveis</h3>
+                        <p>Recuperação profissional de móveis antigos ou danificados, devolvendo a beleza original com técnicas especializadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAMADA PARA GALERIA -->
+    <section class="gallery-call" id="galeria">
+        <div class="container">
+            <div class="gallery-call-content">
+                <div class="gallery-icon">📸</div>
+                <h2>Quer Ver Nossos Trabalhos?</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 30px; color: #4a5568;">
+                    Temos um portfólio completo com fotos de antes e depois dos nossos serviços realizados!
+                </p>
+                <p style="font-size: 1.1rem; margin-bottom: 40px; color: #718096;">
+                    Clique no botão abaixo para solicitar nosso catálogo de trabalhos via WhatsApp. Enviamos na hora!
+                </p>
+                <a href="https://wa.me/5511983357198?text=Olá! Gostaria de ver fotos dos trabalhos de restauração e envelopamento da WillSu." class="btn btn-whatsapp" target="_blank">
+                    📷 Pedir Fotos dos Trabalhos
+                </a>
             </div>
         </div>
     </section>
@@ -876,7 +863,7 @@
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">📍</div>
-                    <h3>ATENDEMOS GRANDE SP</h3>
+                    <h3>ATENDEMOS SÃO PAULO</h3>
                     <p>Cobertura em todo município de São Paulo e região metropolitana</p>
                 </div>
                 <div class="benefit-item">
@@ -885,9 +872,9 @@
                     <p>Trabalhamos com horários agendados para melhor atender sua rotina</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">💯</div>
-                    <h3>SATISFAÇÃO GARANTIDA</h3>
-                    <p>Pagamento somente após sua total aprovação no resultado final</p>
+                    <div class="benefit-icon">💰</div>
+                    <h3>PAGAMENTO APÓS SERVIÇO</h3>
+                    <p>Pagamento somente após o serviço realizado e sua total aprovação</p>
                 </div>
             </div>
         </div>
@@ -902,10 +889,21 @@
                     <h2>WillSu - Tradição e Qualidade</h2>
                     <p>Há mais de uma década, a WillSu se consolidou como referência em restauração e envelopamento na grande São Paulo, construindo uma trajetória baseada na excelência e satisfação dos clientes.</p>
                     <p>Utilizamos materiais premium e técnicas avançadas, garantindo durabilidade e um acabamento que supera expectativas. Cada projeto é tratado com a máxima atenção aos detalhes.</p>
-                    <p><strong>COMPROMISSO WILLSU: TRANSFORMAMOS SEU EQUIPAMENTO COM QUALIDADE SUPERIOR!</strong></p>
+                    <p><strong>COMPROMISSO WILLSU: TRANSFORMAMOS SEU EQUIPAMENTO COM QUALIDADE SUPERIOR E PAGAMENTO SOMENTE APÓS O SERVIÇO REALIZADO!</strong></p>
                     <a href="https://wa.me/5511983357198?text=Olá! Gostaria de solicitar um orçamento para restauração/envelopamento." class="btn btn-whatsapp" target="_blank">Falar com Especialista</a>
                 </div>
-                <div class="about-img"></div>
+                <div class="about-features">
+                    <h3 style="color: var(--primary); margin-bottom: 25px;">Nossa Metodologia</h3>
+                    <ul class="feature-list">
+                        <li>Análise detalhada do equipamento</li>
+                        <li>Preparação profissional da superfície</li>
+                        <li>Materiais premium importados</li>
+                        <li>Aplicação técnica especializada</li>
+                        <li>Acabamento perfeito e durável</li>
+                        <li>Garantia de satisfação total</li>
+                        <li>Pagamento após aprovação</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -945,7 +943,7 @@
                         <div>
                             <h3>Condições Especiais</h3>
                             <p>Sem taxa de deslocamento</p>
-                            <p>Pagamento após aprovação</p>
+                            <p>Pagamento somente após o serviço realizado</p>
                             <small>Transparência e confiança em primeiro lugar</small>
                         </div>
                     </div>
@@ -989,13 +987,82 @@
                 <div class="footer-about">
                     <div class="footer-logo">Will<span>Su</span></div>
                     <p>Especialistas em restauração e envelopamento com 12 anos de excelência. Transformamos seus equipamentos com qualidade superior e compromisso com a satisfação total.</p>
-                    <a href="https://wa.me/5511983357198?text=Olá! Gostaria de solicitar um orçamento para restauração/envelopamento." class="btn btn-whatsapp" target="_blank" style="margin-top: 20px; display: inline-block;">Chamar no WhatsApp</a>
+                    <a href="https://wa.me/5511983357198?text=Olá! Gostaria de ver fotos dos trabalhos de restauração e envelopamento da WillSu." class="btn btn-whatsapp" target="_blank" style="margin-top: 20px; display: inline-block;">
+                        📷 Pedir Fotos dos Trabalhos
+                    </a>
                 </div>
                 <div class="footer-links">
                     <h3>Navegação</h3>
                     <ul>
                         <li><a href="#home">Início</a></li>
-                        <li><a href="#trabalhos">Nossos Trabalhos</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#precos">Preços</a></li>
-                        <li><a href="#sobre">
+                        <li><a href="#galeria">Ver Trabalhos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p>📞 (11) 98335-7198</p>
+                    <p>📍 São Paulo e Região</p>
+                    <p>💰 A partir de R$ 500,00</p>
+                    <p>💳 Pagamento após serviço realizado</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📱</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">👍</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 WillSu Restauração e Envelopamento. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Form submission - Redireciona para WhatsApp
+        document.getElementById('orcamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const servico = document.getElementById('servico').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            const texto = `Olá! Me chamo ${nome}. Telefone: ${telefone}. Serviço: ${servico}. Mensagem: ${mensagem}`;
+            const url = `https://wa.me/5511983357198?text=${encodeURIComponent(texto)}`;
+            
+            window.open(url, '_blank');
+            this.reset();
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
