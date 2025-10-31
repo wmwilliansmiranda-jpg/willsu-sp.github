@@ -1064,4 +1064,9 @@
         });
     </script>
 </body>
-</html>
+
+</html><footer>
+  <p>
+    <a href="politica.html" target="_blank">Política de Privacidade</a>
+  </p>
+</footer>
