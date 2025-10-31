@@ -1070,3 +1070,9 @@
     <a href="politica.html" target="_blank">Política de Privacidade</a>
   </p>
 </footer>
+<footer style="text-align:center; margin-top:40px; padding:10px; font-size:14px; background-color:#f1f1f1;">
+  <a href="politica.html" target="_blank" style="color:#333; text-decoration:none;">
+    Política de Privacidade
+  </a>
+</footer>
+
